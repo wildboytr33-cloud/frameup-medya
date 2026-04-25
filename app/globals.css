@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-4xl: 2.5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff471c, #ff6b3d);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff6b3d, #ff471c);
+}
+
+::selection {
+  background-color: rgba(255, 71, 28, 0.3);
+  color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ff471c, #ff6b3d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Global transition */
+* {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+:focus-visible {
+  outline: 2px solid #ff471c;
+  outline-offset: 2px;
+}
+
+/* Canvas arka planda kalsın, tıklamaları engellemesin */
+canvas {
+  image-rendering: crisp-edges;
+  pointer-events: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.neon-glow {
+  box-shadow:
+    0 0 20px rgba(255, 71, 28, 0.1),
+    0 0 40px rgba(255, 71, 28, 0.05),
+    0 0 60px rgba(255, 71, 28, 0.025);
+}
+
+.neon-glow-hover {
+  box-shadow:
+    0 0 30px rgba(255, 71, 28, 0.2),
+    0 0 60px rgba(255, 71, 28, 0.1),
+    0 0 90px rgba(255, 71, 28, 0.05);
+}
+
+.transition-glow {
+  transition: box-shadow 0.5s ease;
+}
+
+.glass-backdrop {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.neon-focus:focus-visible {
+  outline: 2px solid #ff471c;
+  outline-offset: 4px;
+  box-shadow: 0 0 20px rgba(255, 71, 28, 0.3);
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
