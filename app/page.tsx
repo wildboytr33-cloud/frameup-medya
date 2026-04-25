@@ -58,9 +58,7 @@ export default function Home() {
     },
     telephone: "+90 530 065 79 97",
     email: "info@frameupmedya.com",
-    sameAs: [
-      "https://www.instagram.com/frameupmedya"
-    ],
+    sameAs: ["https://www.instagram.com/frameupmedya"],
     makesOffer: services.map((service) => ({
       "@type": "Offer",
       itemOffered: {
@@ -85,6 +83,14 @@ export default function Home() {
 
       <main className="relative z-10 min-h-screen bg-black/95 text-white">
         <Hero />
+
+        <section className="mx-auto max-w-4xl px-5 py-10 text-sm leading-7 text-white/80 sm:px-6 md:text-base md:leading-8">
+          Antalya video prodüksiyon hizmeti veren FrameUp Medya, drone çekimi,
+          reklam filmi ve tanıtım videosu alanlarında işletmelere profesyonel
+          çözümler sunar. Antalya’da markanızı dijital dünyada öne çıkarmak
+          için güçlü ve satış odaklı video içerikleri üretiyoruz.
+        </section>
+
         <Services services={services} />
         <WhyUs advantages={advantages} />
 
