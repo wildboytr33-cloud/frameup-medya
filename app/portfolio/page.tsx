@@ -69,7 +69,7 @@ export default function PortfolioPage() {
         <section className="mx-auto max-w-7xl px-6 pb-14 pt-28 md:pb-16 md:pt-36">
           <div className="max-w-4xl">
             <span className="mb-5 inline-flex items-center rounded-full border border-[#FF471C]/25 bg-[#FF471C]/10 px-4 py-2 text-sm font-medium text-[#FF471C] backdrop-blur">
-              FrameUp Medya Portföy
+              FrameUP Medya Portföy
             </span>
 
             <h1 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -77,9 +77,9 @@ export default function PortfolioPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
-              Antalya’da drone çekimi, reklam filmi, emlak tanıtım videosu ve
-              kurumsal prodüksiyon alanlarında ürettiğimiz işleri daha güçlü bir
-              görsel anlatım ve profesyonel sunum diliyle inceliyorsunuz.
+              Video prodüksiyon, reklam filmi, emlak tanıtımı, sosyal medya
+              içerikleri ve kurumsal prodüksiyon alanlarında ürettiğimiz
+              projeleri güçlü bir görsel anlatım diliyle inceleyebilirsiniz.
             </p>
           </div>
         </section>
