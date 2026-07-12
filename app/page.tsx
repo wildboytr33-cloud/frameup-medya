@@ -50,7 +50,7 @@ export default function Home() {
       addressLocality: "Antalya",
       addressCountry: "TR",
     },
-    telephone: "+90 530 065 79 97",
+    telephone: "+90 552 615 40 30",
     email: "info@frameupmedya.com",
     sameAs: ["https://www.instagram.com/frameupmedya"],
     makesOffer: services.map((service) => ({

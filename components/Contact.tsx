@@ -1,14 +1,25 @@
+const WHATSAPP_NUMBER = "905526154030";
+
+const WHATSAPP_MESSAGE =
+  "Merhaba FrameUP Medya, projem hakkında bilgi almak istiyorum.";
+
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE,
+)}`;
+
 const contactItems = [
   {
-    label: "Telefon",
-    value: "+90 530 065 79 97",
-    href: "tel:+905300657997",
+    label: "WhatsApp",
+    value: "+90 552 615 40 30",
+    href: WHATSAPP_URL,
+    external: true,
     icon: (
       <svg
         className="h-4 w-4"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -23,12 +34,14 @@ const contactItems = [
     label: "E-posta",
     value: "info@frameupmedya.com",
     href: "mailto:info@frameupmedya.com",
+    external: false,
     icon: (
       <svg
         className="h-4 w-4"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -36,6 +49,7 @@ const contactItems = [
           strokeWidth="1.5"
           d="M4 6.5h16v11H4v-11z"
         />
+
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -49,12 +63,14 @@ const contactItems = [
     label: "Konum",
     value: "Antalya, Türkiye",
     href: "https://www.google.com/maps/search/?api=1&query=Antalya",
+    external: true,
     icon: (
       <svg
         className="h-4 w-4"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -62,6 +78,7 @@ const contactItems = [
           strokeWidth="1.5"
           d="M12 21s7-4.8 7-11a7 7 0 10-14 0c0 6.2 7 11 7 11z"
         />
+
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -81,7 +98,8 @@ export default function Contact() {
     >
       {/* Glow */}
       <div className="pointer-events-none absolute left-[-160px] top-20 h-[260px] w-[260px] rounded-full bg-[#FF471C]/8 blur-[110px]" />
-      <div className="pointer-events-none absolute right-[-180px] bottom-0 h-[320px] w-[320px] rounded-full bg-[#FF471C]/7 blur-[120px]" />
+
+      <div className="pointer-events-none absolute bottom-0 right-[-180px] h-[320px] w-[320px] rounded-full bg-[#FF471C]/7 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] p-5 sm:p-6 md:p-8">
@@ -107,21 +125,14 @@ export default function Contact() {
                 geçebilirsiniz.
               </p>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="mt-6">
                 <a
-                  href="https://wa.me/905300657997?text=Merhaba%20FrameUP%20Medya%2C%20projem%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#FF471C] to-[#FF6B3D] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_28px_rgba(255,71,28,0.22)] transition hover:scale-[1.02] hover:shadow-[0_0_38px_rgba(255,71,28,0.32)]"
+                  className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#FF471C] to-[#FF6B3D] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_28px_rgba(255,71,28,0.22)] transition hover:scale-[1.02] hover:shadow-[0_0_38px_rgba(255,71,28,0.32)] sm:w-auto"
                 >
                   WhatsApp’tan Yaz
-                </a>
-
-                <a
-                  href="tel:+905300657997"
-                  className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white transition hover:border-[#FF471C]/45 hover:bg-[#FF471C]/10"
-                >
-                  Hemen Ara
                 </a>
               </div>
             </div>
@@ -135,6 +146,7 @@ export default function Contact() {
                   <div className="text-[11px] text-white/45">
                     FrameUP Medya
                   </div>
+
                   <h3 className="mt-1 text-base font-semibold text-white">
                     İletişim Bilgileri
                   </h3>
@@ -143,6 +155,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1.5">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.8)]" />
                   </span>
 
@@ -157,12 +170,8 @@ export default function Contact() {
                   <a
                     key={item.label}
                     href={item.href}
-                    target={item.label === "Konum" ? "_blank" : undefined}
-                    rel={
-                      item.label === "Konum"
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
                     className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.025] px-4 py-3.5 transition hover:border-[#FF471C]/40 hover:bg-[#FF471C]/[0.035]"
                   >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#FF471C]/20 bg-[#FF471C]/10 text-[#FF8A66] transition group-hover:border-[#FF471C]/45 group-hover:bg-[#FF471C]/15 group-hover:text-white">
@@ -173,6 +182,7 @@ export default function Contact() {
                       <div className="text-[11px] text-white/45">
                         {item.label}
                       </div>
+
                       <div className="mt-0.5 truncate text-sm font-semibold text-white/85">
                         {item.value}
                       </div>
