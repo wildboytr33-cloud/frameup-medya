@@ -52,7 +52,6 @@ export default function Home() {
     },
     telephone: "+90 552 615 40 30",
     email: "info@frameupmedya.com",
-    sameAs: ["https://www.instagram.com/frameupmedya"],
     makesOffer: services.map((service) => ({
       "@type": "Offer",
       itemOffered: {
@@ -87,7 +86,6 @@ export default function Home() {
         <Services />
         <WhyUs />
         <PresenterSection />
-
         <Contact />
       </main>
     </>
